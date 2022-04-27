@@ -1,6 +1,7 @@
-<p>Ejercicio 3</p>
-<div>
-    {{solicitud.nombre}}
-    <p [textContent] = "solicitud.nombre"></p>
-    <p textContent = "{{solicitud.nombre}}"></p>
-</div>
+<p>Ejercicio 4</p>
+
+<p [style.color]="solicitud.nombre == 'Pepa' ? 'red' : 'blue'">{{solicitud.nombre}}</p>
+
+   
+
+

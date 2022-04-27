@@ -13,7 +13,7 @@ export class SolicitudComponent implements OnInit {
   constructor() { 
 
     setTimeout(() => {
-    this.solicitud.nombre = ' Pepa ';
+    this.solicitud.nombre = 'Pepa';
   },2000)
 }
   ngOnInit(): void {
