@@ -7,15 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SolicitudComponent implements OnInit {
 
-  private _solicitud = { nombre: "Raquel" };
-  public get solicitud() {
-    return this._solicitud;
-  }
-  public set solicitud(value) {
-    this._solicitud = value;
-  }
 
-  constructor() { }
+  solicitud = { nombre: "Raquel" };
+
+  constructor() { 
+
+    setTimeout(() => {
+    this.solicitud.nombre = ' Pepa ';
+  },2000)
+}
   ngOnInit(): void {
   }
 
