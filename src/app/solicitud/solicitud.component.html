@@ -1,7 +1,30 @@
-<p>Ejercicio 5</p>
+ 
+<div class="container">
+ 
+  <div class="starter-template">
 
-<button  (click)="hi()">Hi</button>
+    <div class="row">      	
 
-   
+      <div class="col-md-12 mt-5">
 
-
+        <h1>{{solicitudComedor}}</h1>
+        <h2>{{nuevaSolicitud}}</h2>
+  
+                <div class="mb-3 mt-3">
+                    <label for="nombre" class="form-label">Nombre:</label>
+                    <input (keyup)="actualizarNombre($event)"  [value]="solicitud.nombre" type="solicitud.nombre" class="form-control" id="solicitud.nombre" placeholder="Introduce Nombre" name="solicitud.nombre">
+                </div>                    
+       
+                <div class="mb-3 mt-3">
+                  <label for="apellidos" class="form-label">Apellidos:</label>
+                  <input (keyup)="actualizarApellidos($event)" [value]="solicitud.apellidos" type="solicitud.apellidos" class="form-control" id="solicitud.apellidos" placeholder="Introduce Apellidos" name="solicitud.apellidos">
+                </div>
+                <div>
+                  <button (click)="enviar(solicitud)" type="submit" class="btn btn-primary">Enviar</button>  
+                </div>
+      
+       </div>
+       
+    </div>
+  </div>
+</div>
