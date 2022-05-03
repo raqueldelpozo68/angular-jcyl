@@ -10,7 +10,12 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class SolicitudComponent implements OnInit {
 
-  solicitud = {nombre: "", apellidos:""}
+  parientes:any = [{nombre:"Juan"}, {nombre:"Pepe"}]; 
+  nuevoPariente(){
+      this.parientes.push({nombre:"Julio"})
+  }
+
+  solicitud = {nombre: "", apellidos:""};
   solicitudComedor = 'Solicitud de Comedor';
   nuevaSolicitud = 'Nueva Solicitud';
 
@@ -22,6 +27,7 @@ export class SolicitudComponent implements OnInit {
 
   enviar(solicitud:any){
     console.log('Enviada', solicitud.nombre, solicitud.apellidos);
+    
   }
   actualizarApellidos($event: KeyboardEvent){
       const element = $event.target as HTMLInputElement;

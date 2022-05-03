@@ -19,9 +19,21 @@
                   <label for="apellidos" class="form-label">Apellidos:</label>
                   <input (keyup)="actualizarApellidos($event)" [value]="solicitud.apellidos" type="solicitud.apellidos" class="form-control" id="solicitud.apellidos" placeholder="Introduce Apellidos" name="solicitud.apellidos">
                 </div>
+
+                <div *ngIf="solicitud.nombre.length < 5">El nombre tiene que ser mayor de 5 caracteres</div>
+                
+                <h3>Parientes</h3>
+                <div *ngFor="let pariente of parientes">
+                  <div>{{pariente.nombre}}</div>
+                </div>
+                
+                <app-solicitud></app-solicitud>
+                
                 <div>
                   <button (click)="enviar(solicitud)" type="submit" class="btn btn-primary">Enviar</button>  
                 </div>
+
+                <button (click)="nuevoPariente()">Nuevo Pariente</button>
       
        </div>
        
