@@ -24,9 +24,13 @@
                 
                 <h3>Parientes</h3>
                 <div *ngFor="let pariente of parientes">
-                  <div>{{pariente.nombre}}</div>
-                </div>
-                
+                      <ul>
+                        <li>
+                          <span>{{pariente.nombre}} {{pariente.apellidos}}</span>
+                        </li>
+                      </ul>
+                  </div>
+              
            
 
                 <div>

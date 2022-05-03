@@ -10,9 +10,9 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class SolicitudComponent implements OnInit {
 
-  parientes:any = [{nombre:"Juan"}, {nombre:"Pepe"}]; 
+  parientes: { nombre: string; apellidos:string }[] = [{nombre:"Juan", apellidos:"Gomez"}, {nombre:"Luis", apellidos:"Gutierrez"}];
   nuevoPariente(){
-      this.parientes.push({nombre:"Julio"})
+      this.parientes.push({nombre:"Julio" , apellidos:"Pardinas"})
   }
 
   solicitud = {nombre: "", apellidos:""};
