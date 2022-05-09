@@ -1,0 +1,24 @@
+
+<div class="row">      	
+<div class="col-md-12 mt-5">
+<h3>Lista de Centros del Padre al Hijo</h3>
+<div *ngFor="let listado of centros">
+    <ul>
+        <li>
+    <app-centro [centro]="listado"></app-centro>
+</li>
+</ul>
+</div>
+
+</div>
+<h3>Lista de Centros desde el Padre</h3>
+<div *ngFor="let centro of centros">
+        <ul>
+        <li>
+            <span> {{centro.codigo}} {{centro.nombre}} </span>
+            
+        </li>
+        </ul>
+ </div>
+</div>
+

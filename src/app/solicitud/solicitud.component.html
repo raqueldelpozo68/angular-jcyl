@@ -22,6 +22,8 @@
 
                 <div *ngIf="solicitud.nombre.length < 5">El nombre tiene que ser mayor de 5 caracteres</div>
                 
+                <h2>Centro</h2>
+                  <app-selector-centro></app-selector-centro>
                 <h3>Solicitudes</h3>
                 <div *ngFor="let solicitud of solicitudes">
                       <ul>
