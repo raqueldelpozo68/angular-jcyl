@@ -16,6 +16,6 @@ export class CentrosComponent implements OnInit {
 
 }
 export class tipoCentro{
-  nombre?:String
-  codigo?:String
+  nombre?:string
+  codigo?:string
 }

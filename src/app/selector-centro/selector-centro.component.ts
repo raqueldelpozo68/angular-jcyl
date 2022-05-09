@@ -7,7 +7,7 @@ import { tipoCentro } from '../centros/centros.component';
       <input (keyup)="buscarCentro($event)" [value]="centroSeleccionado?.nombre">
 
       <div *ngFor="let centro of centrosFiltrados">
-          <p (click) = "seleccionarCentro(centro)">{{centro.nombre}}</p>
+          <p (click) = "seleccionarCentro(centro)">{{centro.nombre | uppercase}}</p>
       </div>
   `,
   styleUrls: ['./selector-centro.component.css']
