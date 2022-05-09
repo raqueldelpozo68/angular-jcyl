@@ -10,14 +10,14 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class SolicitudComponent implements OnInit {
 
-  parientes: { nombre: string; apellidos:string }[] = [{nombre:"Juan", apellidos:"Gomez"}, {nombre:"Luis", apellidos:"Gutierrez"}];
-  nuevoPariente(){
-      this.parientes.push({nombre:"Julio" , apellidos:"Pardinas"})
+  solicitudes: { nombre: string; apellidos:string }[] = [{nombre:"Juan", apellidos:"Gomez"}, {nombre:"Luis", apellidos:"Gutierrez"}];
+  nuevaSolicitud(){
+      this.solicitudes.push({nombre:"Julio" , apellidos:"Pardinas"})
   }
 
   solicitud = {nombre: "", apellidos:""};
   solicitudComedor = 'Solicitud de Comedor';
-  nuevaSolicitud = 'Nueva Solicitud';
+ 
 
   constructor() { 
   }

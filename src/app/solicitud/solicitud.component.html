@@ -8,7 +8,7 @@
       <div class="col-md-12 mt-5">
 
         <h1>{{solicitudComedor}}</h1>
-        <h2>{{nuevaSolicitud}}</h2>
+        <h2>Nueva Solicitud</h2>
   
                 <div class="mb-3 mt-3">
                     <label for="nombre" class="form-label">Nombre:</label>
@@ -22,11 +22,11 @@
 
                 <div *ngIf="solicitud.nombre.length < 5">El nombre tiene que ser mayor de 5 caracteres</div>
                 
-                <h3>Parientes</h3>
-                <div *ngFor="let pariente of parientes">
+                <h3>Solicitudes</h3>
+                <div *ngFor="let solicitud of solicitudes">
                       <ul>
                         <li>
-                          <span>{{pariente.nombre}} {{pariente.apellidos}}</span>
+                          <span>{{solicitud.nombre}} {{solicitud.apellidos}}</span>
                         </li>
                       </ul>
                   </div>
@@ -37,7 +37,7 @@
                   <button (click)="enviar(solicitud)" type="submit" class="btn btn-primary">Enviar</button>  
                 </div>
 
-                <button (click)="nuevoPariente()">Nuevo Pariente</button>
+                <button (click)="nuevaSolicitud()">Nueva Solicitud</button>
                 <div>
 
                   
