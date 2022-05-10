@@ -10,13 +10,14 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class SolicitudComponent implements OnInit {
 
-  solicitudes: { nombre: string; apellidos:string }[] = [{nombre:"Juan", apellidos:"Gomez"}, {nombre:"Luis", apellidos:"Gutierrez"}];
+  solicitudes: { id:string, nombre: string; apellidos:string }[] = [{id:"1", nombre:"Juan", apellidos:"Gomez"}, {id:"3",nombre:"Luis", apellidos:"Gutierrez"}];
   nuevaSolicitud(){
-      this.solicitudes.push({nombre:"Julio" , apellidos:"Pardinas"})
+      this.solicitudes.push({id:"4", nombre:"Julio" , apellidos:"Pardinas"})
   }
 
-  solicitud = {nombre: "", apellidos:""};
+  solicitud = {id: "", nombre: "", apellidos:""};
   solicitudComedor = 'Solicitud de Comedor';
+
  
 
   constructor() { 
@@ -39,6 +40,10 @@ export class SolicitudComponent implements OnInit {
     this.solicitud.nombre = element.value; 
     console.log('Actualizado Nombre: ', this.solicitud.nombre);
     }
+  eliminar(solicitud:any){
+    this.solicitudes = this.solicitudes.filter(x => x.id != solicitud.id)
+  }
+   
   } 
 
 

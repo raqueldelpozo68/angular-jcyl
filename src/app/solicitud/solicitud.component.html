@@ -24,22 +24,16 @@
                 
                 <h2>Centro</h2>
                   <app-selector-centro></app-selector-centro>
-                <h3>Solicitudes</h3>
-                <div *ngFor="let solicitud of solicitudes">
-                      <ul>
-                        <li>
-                          <span>{{solicitud.nombre}} {{solicitud.apellidos}}</span>
-                        </li>
-                      </ul>
-                  </div>
-              
-           
 
-                <div>
-                  <button (click)="enviar(solicitud)" type="submit" class="btn btn-primary">Enviar</button>  
+                <h3>Listado de Solicitudes</h3>
+                <div *ngFor="let item of solicitudes">
+                    <app-fila-solicitud [solicitud]="item" (solicitudEliminada)="eliminar(item)" ></app-fila-solicitud>
+                
                 </div>
-
-                <button (click)="nuevaSolicitud()">Nueva Solicitud</button>
+       
+                <p>   <button (click)="enviar(solicitud)" type="submit" class="btn btn-primary">Enviar</button>  <button (click)="nuevaSolicitud()" class="btn btn-primary">Nueva Solicitud</button> </p>
+        
+                
                 <div>
 
                   
