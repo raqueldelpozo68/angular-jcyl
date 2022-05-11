@@ -11,7 +11,7 @@ import { SolicitudService } from '../solicitud.service';
 })
 export class SolicitudesComponent implements OnInit {
 
-  solicitudes: { id:string, nombre: string; apellidos:string }[] = [{id:"1", nombre:"Juan", apellidos:"Gomez"}, {id:"3",nombre:"Luis", apellidos:"Gutierrez"}];
+  solicitudes:any;
   
 
   solicitud = {id: "", nombre: "", apellidos:""};
@@ -20,7 +20,8 @@ export class SolicitudesComponent implements OnInit {
  
 
   constructor(private solicitudService:SolicitudService) { 
-    this.solicitudes = solicitudService.getSolicitudes();
+    solicitudService.getSolicitudes().then(
+        (data:any) => this.solicitudes = data.items.map((x:any) => x.fields))
   }
   
   ngOnInit(): void {
@@ -43,9 +44,9 @@ export class SolicitudesComponent implements OnInit {
   nuevaSolicitud(){
     this.solicitudes.push({id:"4", nombre:"Julio" , apellidos:"Pardinas"})
   }
-  
+
   eliminar(solicitud:any){
-    this.solicitudes = this.solicitudes.filter(x => x.id != solicitud.id)
+    //this.solicitudes = this.solicitudes.filter(x => x.id != solicitud.id)
   }
    
   } 
