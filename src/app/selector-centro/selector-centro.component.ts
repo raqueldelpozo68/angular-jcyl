@@ -13,8 +13,10 @@ import { tipoCentro } from '../centros/centros.component';
   styleUrls: ['./selector-centro.component.css']
 })
 export class SelectorCentroComponent implements OnInit {
+
   centros: tipoCentro[] = [{nombre:"Rosa Chacel"},{nombre:"Gloria Fuertes"}];
   centrosFiltrados: tipoCentro[] = [];
+  
   @Output()
   centroSeleccionado?: tipoCentro = {nombre:''};
 
@@ -31,11 +33,6 @@ export class SelectorCentroComponent implements OnInit {
   seleccionarCentro(centro:tipoCentro){
       this.centroSeleccionado = centro;
   }
- 
-
- 
-  
-
 
 }
 

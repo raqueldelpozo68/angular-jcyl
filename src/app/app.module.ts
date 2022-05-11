@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { SolicitudComponent } from './solicitud/solicitud.component';
+import { SolicitudesComponent } from './solicitudes/solicitudes.component';
 import { CentroComponent } from './centro/centro.component';
 import { CentrosComponent } from './centros/centros.component';
 import { SelectorCentroComponent } from './selector-centro/selector-centro.component';
@@ -12,7 +12,7 @@ import { FilaSolicitudComponent } from './fila-solicitud/fila-solicitud.componen
 @NgModule({
   declarations: [
     AppComponent,
-    SolicitudComponent,
+    SolicitudesComponent,
     CentroComponent,
     CentrosComponent,
     SelectorCentroComponent,

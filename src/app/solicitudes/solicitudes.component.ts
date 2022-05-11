@@ -1,45 +1,49 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { SolicitudService } from '../solicitud.service';
 
 
 @Component({
-  selector: 'app-solicitud',
-  templateUrl: './solicitud.component.html',
-  styleUrls: ['./solicitud.component.css'],
+  selector: 'app-solicitudes',
+  templateUrl: './solicitudes.component.html',
+  styleUrls: ['./solicitudes.component.css'],
 
 })
-export class SolicitudComponent implements OnInit {
+export class SolicitudesComponent implements OnInit {
 
   solicitudes: { id:string, nombre: string; apellidos:string }[] = [{id:"1", nombre:"Juan", apellidos:"Gomez"}, {id:"3",nombre:"Luis", apellidos:"Gutierrez"}];
-  nuevaSolicitud(){
-      this.solicitudes.push({id:"4", nombre:"Julio" , apellidos:"Pardinas"})
-  }
+  
 
   solicitud = {id: "", nombre: "", apellidos:""};
   solicitudComedor = 'Solicitud de Comedor';
 
  
 
-  constructor() { 
+  constructor(private solicitudService:SolicitudService) { 
+    this.solicitudes = solicitudService.getSolicitudes();
   }
   
   ngOnInit(): void {
   }
 
   enviar(solicitud:any){
-    console.log('Enviada', solicitud.nombre, solicitud.apellidos);
-    
+    console.log('Enviada', solicitud.nombre, solicitud.apellidos);  
   }
   actualizarApellidos($event: KeyboardEvent){
       const element = $event.target as HTMLInputElement;
       this.solicitud.apellidos = element.value; 
       console.log('Actualizados Apellidos: ', this.solicitud.apellidos);
-      }
+  }
   actualizarNombre($event: KeyboardEvent){
     const element = $event.target as HTMLInputElement;
     this.solicitud.nombre = element.value; 
     console.log('Actualizado Nombre: ', this.solicitud.nombre);
-    }
+  }
+
+  nuevaSolicitud(){
+    this.solicitudes.push({id:"4", nombre:"Julio" , apellidos:"Pardinas"})
+  }
+  
   eliminar(solicitud:any){
     this.solicitudes = this.solicitudes.filter(x => x.id != solicitud.id)
   }

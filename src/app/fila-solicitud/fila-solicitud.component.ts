@@ -1,8 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
-
-
-
 @Component({
   selector: 'app-fila-solicitud',
   templateUrl: './fila-solicitud.component.html',
@@ -10,8 +7,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 })
 export class FilaSolicitudComponent implements OnInit {
 
-  @Input()
-  solicitud:any;
+  @Input() solicitud:any;
 
   @Output() solicitudEliminada = new EventEmitter();
 

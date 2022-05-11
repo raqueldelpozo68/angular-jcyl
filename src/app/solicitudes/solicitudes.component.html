@@ -22,13 +22,12 @@
 
                 <div *ngIf="solicitud.nombre.length < 5">El nombre tiene que ser mayor de 5 caracteres</div>
                 
-                <h2>Centro</h2>
-                  <app-selector-centro></app-selector-centro>
+        <h2>Centro</h2>
+          <app-selector-centro></app-selector-centro>
 
-                <h3>Listado de Solicitudes</h3>
+        <h3>Listado de Solicitudes</h3>
                 <div *ngFor="let item of solicitudes">
                     <app-fila-solicitud [solicitud]="item" (solicitudEliminada)="eliminar(item)" ></app-fila-solicitud>
-                
                 </div>
        
                 <p>   <button (click)="enviar(solicitud)" type="submit" class="btn btn-primary">Enviar</button>  <button (click)="nuevaSolicitud()" class="btn btn-primary">Nueva Solicitud</button> </p>
