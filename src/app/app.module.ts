@@ -10,6 +10,9 @@ import { SelectorCentroComponent } from './selector-centro/selector-centro.compo
 import { FilaSolicitudComponent } from './fila-solicitud/fila-solicitud.component';
 import { HttpClientModule } from '@angular/common/http';
 
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +25,7 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
 
   ],
   providers: [],
