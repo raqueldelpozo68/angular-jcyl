@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { CentrosComponent } from './centros/centros.component';
+
 
 @Component({
   selector: 'app-root',
@@ -6,5 +9,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'angular-jcyl';
+  title = 'solicitudes';
+
+  constructor(private router:Router){
+
+  }
+
+  navegarAlCentro(){
+    this.router.navigate(['centro', "EmiliaPardoBazan"]);
+  }
 }

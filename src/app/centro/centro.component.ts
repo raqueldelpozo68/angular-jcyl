@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { CentrosComponent, tipoCentro } from '../centros/centros.component';
+import { ActivatedRoute } from '@angular/router';
+import { tipoCentro } from '../centros/centros.component';
 
 
 
@@ -12,10 +13,13 @@ import { CentrosComponent, tipoCentro } from '../centros/centros.component';
 export class CentroComponent implements OnInit {
 
  @Input() centro?:tipoCentro;
-  constructor() { }
+
+  constructor(private route: ActivatedRoute) {
+      route.params.subscribe( x => console.log(x) )
+  }
 
   ngOnInit(): void {
-  }
+     }
 
 
 }	
