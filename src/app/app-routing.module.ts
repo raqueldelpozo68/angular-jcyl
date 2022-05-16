@@ -2,7 +2,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CentroComponent } from './centro/centro.component';
 import { CentrosComponent } from './centros/centros.component';
-import { SolicitudesComponent } from './solicitudes/solicitudes.component';
+import { SolicitudesComponent } from "./solicitudes/solicitudes.component";
+
 
 let routes= [
   {path:"solicitudes",component:SolicitudesComponent},
