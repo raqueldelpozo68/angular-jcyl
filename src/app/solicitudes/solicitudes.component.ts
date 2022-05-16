@@ -11,17 +11,16 @@ import { SolicitudService } from '../solicitud.service';
 })
 export class SolicitudesComponent implements OnInit {
 
-  solicitudes:any;
+  solicitudesP:any;
   
 
   solicitud = {id: "", nombre: "", apellidos:""};
   solicitudComedor = 'Solicitud de Comedor';
 
- 
+  
 
   constructor(private solicitudService:SolicitudService) { 
-    solicitudService.getSolicitudes().then(
-        (data:any) => this.solicitudes = data.items.map((x:any) => x.fields))
+    this.solicitudesP = solicitudService.getSolicitudes();
   }
   
   ngOnInit(): void {
@@ -42,7 +41,7 @@ export class SolicitudesComponent implements OnInit {
   }
 
   nuevaSolicitud(){
-    this.solicitudes.push({id:"4", nombre:"Julio" , apellidos:"Pardinas"})
+    this.solicitudesP.push({id:"4", nombre:"Julio" , apellidos:"Pardinas"})
   }
 
   eliminar(solicitud:any){

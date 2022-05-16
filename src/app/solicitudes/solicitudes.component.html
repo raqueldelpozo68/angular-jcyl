@@ -26,7 +26,7 @@
           <app-selector-centro></app-selector-centro>
 
         <h3>Listado de Solicitudes</h3>
-                <div *ngFor="let item of solicitudes">
+                <div *ngFor="let item of solicitudesP | async">
                     <app-fila-solicitud [solicitud]="item" (solicitudEliminada)="eliminar(item)" ></app-fila-solicitud>
                 </div>
        
