@@ -16,6 +16,10 @@ export class DatosBancariosComponent implements OnInit {
 
   enviar(f:NgForm){
     console.log(f);
+    if (f.controls['cuenta'].errors){
+      console.log("Errores:")
+      console.log(f.controls['cuenta'].errors);
+    }
   }
 
 }
