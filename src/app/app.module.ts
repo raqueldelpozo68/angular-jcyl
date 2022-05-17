@@ -9,6 +9,8 @@ import { FilaSolicitudComponent } from './fila-solicitud/fila-solicitud.componen
 import { SelectorCentroComponent } from './selector-centro/selector-centro.component';
 import { SolicitudesComponent } from './solicitudes/solicitudes.component';
 import { SolicitudModule } from './solicitud/solicitud.module';
+import { DatosBancariosComponent } from './datos-bancarios/datos-bancarios.component';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -19,14 +21,16 @@ import { SolicitudModule } from './solicitud/solicitud.module';
   declarations: [
     AppComponent,
     CentrosComponent,
-    CentroComponent
+    CentroComponent,
+    DatosBancariosComponent
     
   ],
   imports: [
     SolicitudModule,
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
    
   ],
   exports: [
