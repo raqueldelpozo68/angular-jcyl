@@ -1,13 +1,16 @@
 
-<form (ngSubmit)="enviar(f)" #f="ngForm">
+<form [formGroup] = "formGroup">
     <label>Entidad</label>
-    <input name='entidad' ngModel required minlength="4" maxlength="4" size="4">
+    <input name='entidad'  required minlength="4" maxlength="4" size="4" formControlName="entidad">
     <label>Sucursal</label>
-    <input name='sucursal' ngModel required minlength="4" maxlength="4" size="4">
+    <input name='sucursal'  required minlength="4" maxlength="4" size="4" formControlName="sucursal">
     <label>DC</label>
-    <input name='dc' ngModel required minlength="2" maxlength="2" size="2">
+    <input name='dc'  required minlength="2" maxlength="2" size="2" formControlName="dc">
     <label>Cuenta</label>
-    <input name='cuenta' ngModel required minlength="10" maxlength="10" size="10">
-    <button [disabled]="f.invalid">Enviar</button>
+    <input name='cuenta'  required minlength="10" maxlength="10" size="10" formControlName="cuenta">
+
+    <button [disabled]="formGroup.invalid" (click)="enviar()">Enviar</button>
+
 </form>
+
 

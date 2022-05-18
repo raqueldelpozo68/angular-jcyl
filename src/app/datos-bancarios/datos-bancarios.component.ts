@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
+import { FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-datos-bancarios',
@@ -8,18 +9,21 @@ import { NgForm } from '@angular/forms';
 })
 export class DatosBancariosComponent implements OnInit {
 
-   
-  constructor() { }
+  formGroup!: FormGroup;
 
-  ngOnInit(): void {
+  constructor(private formBuilder: FormBuilder) { 
+        this.formGroup = formBuilder.group(
+          {entidad: new FormControl('', Validators.min(3333)), sucursal:'0000', dc:'', cuenta:''}
+        )
   }
 
-  enviar(f:NgForm){
-    console.log(f);
-    if (f.controls['cuenta'].errors){
-      console.log("Errores:")
-      console.log(f.controls['cuenta'].errors);
-    }
+  ngOnInit(): void {
+
+  }
+
+  enviar(){
+    console.log(this);
+
   }
 
 }

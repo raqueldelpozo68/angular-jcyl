@@ -10,7 +10,8 @@ import { SelectorCentroComponent } from './selector-centro/selector-centro.compo
 import { SolicitudesComponent } from './solicitudes/solicitudes.component';
 import { SolicitudModule } from './solicitud/solicitud.module';
 import { DatosBancariosComponent } from './datos-bancarios/datos-bancarios.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { Router, RouterModule } from '@angular/router';
 
 
 
@@ -30,7 +31,8 @@ import { FormsModule } from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
    
   ],
   exports: [
