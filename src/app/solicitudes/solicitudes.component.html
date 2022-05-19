@@ -9,37 +9,30 @@
 
         <h1>{{solicitudComedor}}</h1>
         <h2>Nueva Solicitud</h2>
-  
-                <div class="mb-3 mt-3">
-                    <label for="nombre" class="form-label">Nombre:</label>
-                    <input (keyup)="actualizarNombre($event)"  [value]="solicitud.nombre" type="solicitud.nombre" class="form-control" id="solicitud.nombre" placeholder="Introduce Nombre" name="solicitud.nombre">
-                </div>                    
-       
-                <div class="mb-3 mt-3">
-                  <label for="apellidos" class="form-label">Apellidos:</label>
-                  <input (keyup)="actualizarApellidos($event)" [value]="solicitud.apellidos" type="solicitud.apellidos" class="form-control" id="solicitud.apellidos" placeholder="Introduce Apellidos" name="solicitud.apellidos">
-                </div>
 
-                <div *ngIf="solicitud.nombre.length < 5">El nombre tiene que ser mayor de 5 caracteres</div>
-                
-        <h2>Centro</h2>
+            <label for="nombre" class="form-label">Nombre:</label>
+            <input [(ngModel)]="solicitud.nombre"/>
+
+            <label for="apellidos" class="form-label">Apellidos:</label>
+            <input [(ngModel)]="solicitud.apellidos"/>
+
+            <button (click)="enviar(solicitud)" type="submit" class="btn btn-primary">Enviar</button> 
+
+            <div *ngIf="solicitud.nombre.length < 5">El nombre tiene que ser mayor de 5 caracteres
+            </div>
+            
+        
+            <h2>Centro</h2>
           <app-selector-centro></app-selector-centro>
 
         <h3>Listado de Solicitudes</h3>
                 <div *ngFor="let item of solicitudesP | async">
                     <app-fila-solicitud [solicitud]="item" (solicitudEliminada)="eliminar(item)" ></app-fila-solicitud>
                 </div>
-       
-                <p>   <button (click)="enviar(solicitud)" type="submit" class="btn btn-primary">Enviar</button>  <button (click)="nuevaSolicitud()" class="btn btn-primary">Nueva Solicitud</button> </p>
-        
-                
-                <div>
+                <p><button (click)="nuevaSolicitud()" class="btn btn-primary">Nueva Solicitud</button> </p>
 
-                  
-                </div>
        </div>
     </div>
   </div>
-</div>
 
 

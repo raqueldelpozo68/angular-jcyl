@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { SolicitudesComponent } from '../solicitudes/solicitudes.component';
 import { FilaSolicitudComponent } from '../fila-solicitud/fila-solicitud.component';
 import { SelectorCentroComponent } from '../selector-centro/selector-centro.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -13,6 +14,7 @@ import { SelectorCentroComponent } from '../selector-centro/selector-centro.comp
   ],
   imports: [
     CommonModule,
+    FormsModule,
   ],
 
 })

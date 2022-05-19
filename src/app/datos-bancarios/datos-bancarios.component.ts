@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
 import { FormBuilder } from '@angular/forms';
 
+
 @Component({
   selector: 'app-datos-bancarios',
   templateUrl: './datos-bancarios.component.html',
@@ -10,6 +11,7 @@ import { FormBuilder } from '@angular/forms';
 export class DatosBancariosComponent implements OnInit {
 
   formGroup!: FormGroup;
+
 
   constructor(private formBuilder: FormBuilder) { 
         this.formGroup = formBuilder.group(
@@ -23,7 +25,6 @@ export class DatosBancariosComponent implements OnInit {
 
   enviar(){
     console.log(this);
-
   }
 
 }

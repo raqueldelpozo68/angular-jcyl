@@ -7,32 +7,23 @@ import { SolicitudService } from '../solicitud.service';
   styleUrls: ['./solicitudes.component.css'],
 })
 export class SolicitudesComponent implements OnInit {
-  solicitudesP: any;
 
-  solicitud = { id: "", nombre: "", apellidos: "" };
   solicitudComedor = 'Solicitud de Comedor';
 
+  solicitud = { id: "", nombre: "NNNNNN", apellidos: "" };
+  solicitudesP: any;
+  solicitudes: any;
+
   constructor(private solicitudService: SolicitudService) {
-    this.solicitudesP = solicitudService.getSolicitudes();
+    this.solicitudes = solicitudService.getSolicitudes();
   }
 
   ngOnInit(): void {
   }
 
   enviar(solicitud: any) {
-    console.log('Enviada', solicitud.nombre, solicitud.apellidos);
+    console.log('Enviada', solicitud);
   }
-  actualizarApellidos($event: KeyboardEvent) {
-    const element = $event.target as HTMLInputElement;
-    this.solicitud.apellidos = element.value;
-    console.log('Actualizados Apellidos: ', this.solicitud.apellidos);
-  }
-  actualizarNombre($event: KeyboardEvent) {
-    const element = $event.target as HTMLInputElement;
-    this.solicitud.nombre = element.value;
-    console.log('Actualizado Nombre: ', this.solicitud.nombre);
-  }
-
   nuevaSolicitud() {
     this.solicitudesP.push({ id: "4", nombre: "Julio", apellidos: "Pardinas" });
   }
