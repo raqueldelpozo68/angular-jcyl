@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
+import { AbstractControl, FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
 import { FormBuilder } from '@angular/forms';
 
 
@@ -15,7 +15,7 @@ export class DatosBancariosComponent implements OnInit {
 
   constructor(private formBuilder: FormBuilder) { 
         this.formGroup = formBuilder.group(
-          {entidad: new FormControl('', Validators.min(3333)), sucursal:'0000', dc:'', cuenta:''}
+          {entidad: '', sucursal: new FormControl ('0000', [Validators.required, this.myValidador]), dc:'', cuenta:''}
         )
   }
 
@@ -27,4 +27,7 @@ export class DatosBancariosComponent implements OnInit {
     console.log(this);
   }
 
+  myValidador(formControl:FormControl){
+    return formControl.value === '0000' ? {error:"bad value, 0000 does not exist"} : null ;
+  }  
 }
