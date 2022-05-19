@@ -11,12 +11,18 @@ import { FormBuilder } from '@angular/forms';
 export class DatosBancariosComponent implements OnInit {
 
   formGroup!: FormGroup;
-
+  sucursalGroup = new FormControl ('0000', [Validators.required, this.myValidador]);
 
   constructor(private formBuilder: FormBuilder) { 
         this.formGroup = formBuilder.group(
-          {entidad: '', sucursal: new FormControl ('0000', [Validators.required, this.myValidador]), dc:'', cuenta:''}
+          {
+          entidad: '', 
+          sucursal: this.sucursalGroup, 
+          dc:'', 
+          cuenta:''
+        }
         )
+        this.sucursalGroup.valueChanges.subscribe(x => console.log(x))
   }
 
   ngOnInit(): void {
