@@ -9,11 +9,11 @@
     <label>Cuenta</label>
     <input name='cuenta'  required minlength="10" maxlength="10" size="10" formControlName="cuenta">
 
+    <button [disabled]="formGroup.invalid" (click)="enviar()">Enviar</button>
+
     <div *ngIf="formGroup.invalid">
         {{formGroup.controls['sucursal'].errors | json}}
     </div>
-    <button [disabled]="formGroup.invalid" (click)="enviar()">Enviar</button>
-
 </form>
 
 

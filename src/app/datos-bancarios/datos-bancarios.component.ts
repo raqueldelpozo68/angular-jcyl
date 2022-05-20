@@ -26,7 +26,6 @@ export class DatosBancariosComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
   }
 
   enviar(){
